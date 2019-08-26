@@ -1,0 +1,12 @@
+config:
+  target: 'https://soif-services-dot-cloud-dev-1.appspot.com'
+  phases:
+    - duration: 20
+      arrivalRate: 10
+  defaults:
+    headers:
+      x-my-service-auth: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJfaWQiOiI1NjM0ODY5OTg4MTYzNTg0IiwiZmlyc3ROYW1lIjoiSGFyb2xkIiwibGFzdE5hbWUiOiJCdWVuYXZlbnR1cmEiLCJlbWFpbCI6Imhhcm9sZC5idWVuYXZlbnR1cmFAbmFub3Zpc2lvbi5jb20iLCJpYXQiOjE1NjY1ODkyNTIsImV4cCI6MTU2NzE5NDA1Mn0.rxSXX5q7ef_No3NY09AmADrjgT10yRmHzTniWr6uIA8ydZ-L1-EtFiJPdYgulvlAtvyncjk-d7MekR8a8VZqeEAaZw-btE76dwy4IZb7Oej1jPfPlunuUGbI_txvsvfNEiaBc6yHtsZcDdvlSlnh2CPNTH1pMVDXBR8nDj5NuXzuLnpdJLT0wkelss5Ybu3UZLRI8--8gpNu8fD6fdiA9eJWgknLG_EljkaIIOXqntVMwTJ2ZkaA7E9lpHfQTmWMfQMDNKmQ7xVA9x1U_nHa9X636O9fpnfvc2Ed4c6U65Apn0j5tL9tcHKZJd9eDe4aCKJjFRicz5MtTJMttA5MmszOFIvC7kwXMQgfNTxUB7SKQV5T-Re8Y95BaMUdGLqothBObNlHEP_dp0QGoEsVfBmLVMzqiSynoJDhIJcgl6BBewCQnHcvOxDiYLc_jjMrqNQoXylvzsjp9xJfLTcvTuG4OBHojg-ZoGzgMQFrMDW6LYNpKYWJzYLoEN6zpQgbyfuEFT2D1FBQAyOKJXf-N6sCKYlA1CaKOUoTfznaiWqUBiFD4L3jJHhr2fP-yT-rWYhudWsjb1dJ-dzWn3hHZJ_Y1Yc5fwb9uxShT5xW7TzKZLSKZZbB91q2qA6cNvf28ZN-jT5S5H8F4yk2QMQXGBR6vqz65fiuNzzsuqk4SKE'
+scenarios:
+  - flow:
+    - get:
+        url: "/users"

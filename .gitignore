@@ -1,0 +1,12 @@
+#Local VSCode configs for running and testing
+.vscode/
+
+#Dependecies
+node_modules
+
+#Ignore built ts files
+dist/**/*
+*.map
+
+#Ignore logs
+*.log
