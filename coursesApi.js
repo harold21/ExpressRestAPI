@@ -1,8 +1,38 @@
+const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db');
+const config = require('config'); // Very useful package for manage configuration folder
+const morgan = require('morgan'); // This package is used for logging request and responses
+const helmet = require('helmet'); // For Protect your express app setting various HTTP headers
 const Joi = require('joi');
+const logger = require('./logger');
 const express = require('express');
 const app = express();
 
 app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public')); // For set static access to a folder modules f.e. /.public
+app.use(helmet());
+
+// Configuration
+console.log('Application Name: ' + config.get('name'));
+console.log('Mail Server: ' + config.get('mail.host'));
+console.log('Mail Password: ' + config.get('mailPass'));
+
+if(app.get('env') === 'development') {
+    app.use(morgan('tiny'));
+    startupDebugger('Morgan enabled...');
+}
+
+// DB work...
+dbDebugger('Connecting to the Database...');
+
+app.use(function(req, res, next) {
+    console.log("Logging...");
+    next();
+});
+
+app.use(logger);
 
 const courses = [
     { id: 1, name: 'curse1' },
