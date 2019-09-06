@@ -1,4 +1,4 @@
-const EventEmitter = require('events');
+const EventEmitter = require('events'); // Node's event emitter for all engines.
 const emitter = EventEmitter();
 
 // Register a Listerner
